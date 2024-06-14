@@ -25,16 +25,16 @@ public class Screens {
 
     public static void main(){
         System.out.printf("""
-            would you like to
-            1)be quized
-            2)make a new quiz
-            3)update a quiz
-            4)delete a quiz
-            5)quit
+            Would You Like To
+            1)Be Quized
+            2)Make A New Quiz
+            3)Update A Quiz
+            4)Delete A Quiz
+            5)Quit
         """);
         boolean loop;
         do {
-            System.out.println("choose a option");
+            System.out.println("Choose A Option :");
             String inputInt = scanner.nextLine();
             loop = false;
             try {
@@ -70,7 +70,7 @@ public class Screens {
     }
 
     public static void quizMake(){
-        System.out.println("what would you like to name your quiz");
+        System.out.println("What Would You Like To Name Your Quiz :");
         String inputPath = scanner.nextLine();
         String filePath = "src/main/resources/"+inputPath+".txt";
         try {
@@ -81,12 +81,13 @@ public class Screens {
             //printer.close();
             Quiz quiz = new Quiz(inputPath);
             for(Map.Entry<String,String> s : quiz.getQuiz().entrySet()){
-                printer.write(s.getKey()+"\\|"+s.getValue());
+                printer.write(s.getKey()+"|"+s.getValue());
                 printer.newLine();
             }
             printer.close();
         }catch (IOException e) {
             System.out.println("Sorry Something Went Wrong. We Don't Know When, Or Where, But Somethings Wrong! ");
+            main();
         }
 
 
@@ -95,10 +96,10 @@ public class Screens {
         //System.out.println("sorry this feature is under maintance");
     }
     public static void quizUpdate(){
-        System.out.println("sorry this feature is under maintance");
+        System.out.println("Sorry This Feature Is Under Maintance");
     }
     public static void quizDelete(){
-        System.out.println("sorry this feature is under maintance");
+        System.out.println("Sorry This Feature Is Under Maintance");
     }
     public static void quit(){
         System.exit(0);

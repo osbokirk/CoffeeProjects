@@ -31,15 +31,15 @@ public class Quiz  {
         this.name = name;
         this.quiz = new HashMap<>();
         Scanner scanner = new Scanner(System.in);
-        System.out.printf("Lets Get Started");
+        System.out.println("Lets Get Started!");
         boolean loop = true;
         do {
-            System.out.println("What is your question");
+            System.out.println("What Is Your Question :");
             String Question =  scanner.nextLine();
-            System.out.println("What is the Answer");
+            System.out.println("What Is The Answer :");
             String Answer = scanner.nextLine();
             quiz.put(Question,Answer);
-            System.out.println("Press Q If Your done if your done add questions");
+            System.out.println("Press Q If Your Done\nOtherwise Press Enter");
             if (scanner.nextLine().equalsIgnoreCase("Q")){
                 loop = false;
             }
